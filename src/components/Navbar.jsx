@@ -4,18 +4,13 @@ import { FaUser } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
-    <div className=" ">
-      <nav className="bg-orange-800 p-4 flex justify-between px-12 items-center shadow-lg ">
-        <h1 className="text-white text-xl font-bold ">Majeka</h1>
-        <ul className="flex space-x-6 text-white">
+    <div className=" relative z-20">
+      <nav className="bg-orange-800 p-4 flex justify-between px-12 fixed top-0 left-0 right-0 items-center shadow-xl ">
+        <h1 className="text-white text-2xl font-bold font-overpass ">Majeka</h1>
+        <ul className="flex space-x-6 text-white text-lg font-overpass font-normal">
           <li>
             <a href="#hero" className="hover:text-gray-300">
               Home
-            </a>
-          </li>
-          <li>
-            <a href="#categories" className="hover:text-gray-300">
-              Menu
             </a>
           </li>
           <li>
@@ -23,8 +18,13 @@ const Navbar = () => {
               About
             </a>
           </li>
+          <li>
+            <a href="#categories" className="hover:text-gray-300">
+              Menu
+            </a>
+          </li>
         </ul>
-        <ul className="flex space-x-4">
+        <ul className="flex text-lg space-x-4">
           <li>
             <a
               href="#cart"
