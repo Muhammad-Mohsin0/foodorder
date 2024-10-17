@@ -1,13 +1,19 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   return (
     <div className=" relative z-20">
       <nav className="bg-orange-800 p-4 flex justify-between px-12 fixed top-0 left-0 right-0 items-center shadow-xl ">
         <h1 className="text-white text-2xl font-bold font-overpass ">Majeka</h1>
-        <ul className="flex space-x-6 text-white text-lg font-overpass font-normal">
+
+        <div className="md:hidden flex ">
+          <GiHamburgerMenu className="text-white text-3xl font-bold rounded-" />
+        </div>
+
+        <ul className="flex space-x-6 text-white text-lg font-overpass font-normal hidden md:flex ">
           <li>
             <a href="#hero" className="hover:text-gray-300">
               Home
@@ -24,7 +30,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <ul className="flex text-lg space-x-4">
+        <ul className="flex text-lg space-x-4 hidden md:flex">
           <li>
             <a
               href="#cart"
