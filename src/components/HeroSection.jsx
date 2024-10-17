@@ -7,8 +7,8 @@ const HeroSection = () => {
       <div className="relative bg-hero-pattern bg-cover bg-center min-h-screen text-white ">
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
 
-        <div className="relative z-10 pt-20 flex items-center justify-around space-y-12">
-          <div className="">
+        <div className="relative z-10 pt-20 flex flex-col xlg:flex-row items-center justify-around space-y-12 xlg:space-y-8 xl:space-y-0">
+          <div className=" flex-shrink-">
             <h1 className="text-5xl font-overpass font-bold mb-4">
               Delicious Food Delivered to You!
             </h1>
@@ -31,7 +31,7 @@ const HeroSection = () => {
             <img
               src={fooda}
               alt="Rotate Dish"
-              className="max-w-md rounded-full  swing"
+              className=" max-w-sm 2xl:max-w-md h-auto  imgRotate "
             />
           </div>
         </div>
