@@ -1,37 +1,36 @@
 import React from "react";
-import fooda from "../assets/hero.png";
+import fooda from "../assets/hero.svg";
 import { FaPlay } from "react-icons/fa6";
 const HeroSection = () => {
   return (
     <>
-      <div className="relative bg-hero-pattern bg-cover bg-center min-h-screen text-white ">
-        <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+      <div className="relative bg-hero-pattern bg-cover bg-center min-h-screen text-white flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
-        <div className="relative z-10 pt-20 flex flex-col xlg:flex-row items-center justify-around space-y-12 xlg:space-y-8 xl:space-y-0">
-          <div className=" flex-shrink-">
-            <h1 className="text-5xl font-overpass font-bold mb-4">
+        <div className="relative z-20 flex flex-col xl:flex-row items-center justify-center xl:justify-around w-full ">
+          <div className=" text-center xl:w-[44%]  px-4">
+            <h1 className="text-3xl md:text-4xl font-overpass font-bold mb-4 sm:mb-2 px-2 xl:p-0">
               Delicious Food Delivered to You!
             </h1>
-            <p className="text-lg mb-16 font-overpass">
+            <p className="text-xl md:text-2xl  mb-4 sm:mb-12 font-overpass ">
               Order your favorite meals from the comfort of your home.
             </p>
-            <div className="flex space-x-4">
-              <button className="font-overpass text-xl font-medium bg-orange-600 text-white px-6 py-4 rounded-lg hover:bg-orange-500">
+            <div className="flex items-center justify-center space-x-4">
+              <button className="font-overpass text-xl font-medium bg-orange-600 text-white px-4 py-4 sm:px-6 rounded-lg hover:bg-orange-500">
                 Order Now
               </button>
 
-              <button className="font-overpass text-xl font-medium bg-white text-black px-4 py-4 rounded-lg hover:bg-orange-500 hover:text-white flex items-center">
-                <FaPlay className="text-2xl  mr-2" />{" "}
-                {/* Add margin to the icon */}
+              <button className="font-overpass text-xl font-medium bg-white text-black px-4 py-4 sm:px-6 rounded-lg hover:bg-orange-500 hover:text-white flex items-center">
+                <FaPlay className="text-2xl  mr-2" />
                 How to Order
               </button>
             </div>
           </div>
-          <div className="rounded-full">
+          <div className="mt-8 xl:mt-0">
             <img
               src={fooda}
               alt="Rotate Dish"
-              className=" max-w-sm 2xl:max-w-md h-auto  imgRotate "
+              className=" max-w-xs sm:max-w-sm  xl:max-w-md   h-auto   imgRotate "
             />
           </div>
         </div>
