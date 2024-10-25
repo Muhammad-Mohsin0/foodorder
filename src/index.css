@@ -38,3 +38,33 @@
 .imgRotate {
   animation: imgRotate 30s linear infinite; /* Apply rotation animation */
 }
+
+@layer utilities {
+  @keyframes fadeBackground {
+    0%,
+    20% {
+      background-image: url("/src/assets/background1.jpg");
+    }
+    25%,
+    45% {
+      background-image: url("/src/assets/background2.jpg");
+    }
+    50%,
+    70% {
+      background-image: url("/src/assets/background3.jpg");
+    }
+    75%,
+    95% {
+      background-image: url("/src/assets/background4.jpg");
+    }
+    100% {
+      background-image: url("/src/assets/background1.jpg");
+    }
+  }
+
+  .animate-fade-background {
+    background-size: cover;
+    background-position: center;
+    animation: fadeBackground 50s infinite ease-in-out;
+  }
+}
