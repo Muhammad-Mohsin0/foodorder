@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar />
       <HeroSection />
-      {/* <About /> */}
+      <About />
       {/* <FoodCategory /> */}
     </>
   );
