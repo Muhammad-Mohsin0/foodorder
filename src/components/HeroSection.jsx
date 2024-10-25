@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa6";
 const HeroSection = () => {
   return (
     <>
-      <div className="relative bg-hero-pattern   min-h-screen text-white flex items-center justify-center animate-fade-background">
+      <div className="relative bg-hero-pattern min-h-screen text-white flex items-center justify-center overflow-hidden animate-fade-background pt-24 pb-8">
         <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
         <div className="relative z-20 flex flex-col xl:flex-row items-center justify-center xl:justify-around w-full ">

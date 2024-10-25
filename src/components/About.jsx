@@ -3,33 +3,36 @@ import Aboutimg from "../assets/About3.jpg";
 
 const About = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between p-8 space-y-8 md:space-y-0 md:space-x-16">
+    <div className="min-h-full ">
       {/* Image Div with Fixed Width */}
-      <div className="flex-shrink-0 w-full md:w-[32%] flex justify-center ml-12">
-        <img
-          src={Aboutimg}
-          alt="About Us"
-          className="w-full h-auto rounded-l-xl "
-        />
-      </div>
+      <div className="flex flex-col md:flex-row items-center justify-center md:justify-evenly">
+        <div className=" mt-8 xlg:mb-8  px-6 sm:max-w-xl md:max-w-lg  ">
+          <img
+            src={Aboutimg}
+            alt="About Us"
+            className="w-full  rounded-t-xl xlg:rounded-l-xl xlg:mt-2 "
+          />
+        </div>
 
-      {/* Text Div with Expanding Width and Left Space for Large Screens */}
-      <div className=" md:flex-grow md:ml-24">
-        <h1 className="text-3xl font-bold text-orange-600 font-overpass mb-6">
-          About us ~
-        </h1>
-        <h1 className="text-4xl font-bold text-black font-overpass mb-4">
-          Welcome to Jungle-Food
-        </h1>
-        <p className="w-[80%] text-xl text-left text-gray-400 mb-6 ">
-          Temsum et lorem et sit, sed stet lorem sit. Temt ipsum et lorem et
-          sit, sed stet lorem sit. Tempor erat elitr rebum at clita. Diam dolor
-          diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem
-          et sit, sed stet lorem sit clita duo justo magna dolore erat amet.
-        </p>
-        <button className="font-overpass text-xl font-medium bg-orange-600 text-white px-6 py-4 rounded-lg hover:bg-orange-500">
-          Get Started
-        </button>
+        {/* Text Div with Expanding Width and Left Space for Large Screens */}
+        <div className="  mt-8 px-6 mb-4 sm:max-w-xl ">
+          <h1 className="text-3xl font-bold text-orange-600 font-overpass mb-6 md:mb-4 ">
+            About us ~
+          </h1>
+          <h1 className="text-4xl font-bold text-black font-overpass mb-4 md:mb-4">
+            Welcome to Jungle-Food
+          </h1>
+          <p className=" text-xl text-left text-gray-400 mb-6 ">
+            Temsum et lorem et sit, sed stet lorem sit. Temt ipsum et lorem et
+            sit, sed stet lorem sit. Tempor erat elitr rebum at clita. Diam
+            dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum
+            et lorem et sit, sed stet lorem sit clita duo justo magna dolore
+            erat amet.
+          </p>
+          <button className="font-overpass text-xl font-medium bg-orange-600 text-white px-6 py-4 rounded-lg hover:bg-orange-500">
+            Get Started
+          </button>
+        </div>
       </div>
     </div>
   );
