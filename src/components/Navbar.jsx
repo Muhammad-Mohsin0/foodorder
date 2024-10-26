@@ -41,7 +41,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="#cart"
+              href=""
               className="text-white hover:text-gray-300 flex items-center"
             >
               <FaUser className="mt-1 text-2xl" />
