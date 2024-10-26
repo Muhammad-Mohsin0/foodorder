@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       fontFamily: {
         overpass: ["Overpass", "sans-serif"],
+        pacifico: ["Pacifico", " cursive"],
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/background1.jpg')",
