@@ -18,66 +18,84 @@ const FoodCategories = ({ addToCart }) => {
       <h2 className="text-center text-3xl  font-overpass  font-bold mb-8 ">
         Special Menu For You
       </h2>
-      <ul className="flex text-lg font-overpass  justify-evenly  ">
-        <li className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2">
+      <div className="flex text-lg font-overpass  justify-evenly  overflow-x-auto snap-both md:snap-none space-x-4 p-4 ">
+        <button className=" hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 snap-center flex-shrink-0">
           <img
             src={Coffee}
             alt="Coffee Icon"
             className="w-9 h-9 inline mr-2 rounded-full bg-white p-1  "
           />
           Coffee
-        </li>
-        <li className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2">
+        </button>
+        <button className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 snap-center flex-shrink-0">
           <img
             src={Burger}
             alt="Coffee Icon"
             className="w-9 h-9 inline mr-2 rounded-full bg-white p-1  "
           />
           Burger
-        </li>
-        <li className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2">
+        </button>
+        <button className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 snap-center flex-shrink-0">
           <img
             src={Pizza}
             alt="Coffee Icon"
             className="w-9 h-9 inline mr-2 rounded-full bg-white p-1  "
           />
           Pizza
-        </li>
-        <li className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2">
+        </button>
+        <button className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 snap-center flex-shrink-0">
           <img
             src={Wrap}
             alt="Coffee Icon"
             className="w-9 h-9 inline mr-2 rounded-full bg-white p-1  "
           />
           Wraps
-        </li>
-        <li className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2">
+        </button>
+        <button className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 snap-center flex-shrink-0">
           <img
             src={Desi}
             alt="Coffee Icon"
             className="w-9 h-9 inline mr-2 rounded-full bg-white p-1  "
           />
           Karahi
-        </li>
-      </ul>
+        </button>
+      </div>
 
-      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {categories.map((category) => (
-          <div
-            key={category.id}
-            className="bg-white p-4 rounded-lg shadow-md text-center"
-          >
-            {category.icon}
-            <h3 className="text-lg font-bold mt-4">{category.name}</h3>
+      <div className="grid grid-cols-3 items-center justify-center">
+        <div className="  gap-6">
+          <div className="bg-white p-4 rounded-lg shadow-md text-center">
+            <h3 className="text-lg font-bold mt-4">Pizza</h3>
             <button
               className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-              onClick={() => addToCart(category)}
+              onClick={""}
             >
               Add to Cart
             </button>
           </div>
-        ))}
-      </div> */}
+        </div>
+        <div className="  gap-6">
+          <div className="bg-white p-4 rounded-lg shadow-md text-center">
+            <h3 className="text-lg font-bold mt-4">Pizza</h3>
+            <button
+              className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              onClick={""}
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div className=" gap-6">
+          <div className="bg-white p-4 rounded-lg shadow-md text-center">
+            <h3 className="text-lg font-bold mt-4">Pizza</h3>
+            <button
+              className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              onClick={""}
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
