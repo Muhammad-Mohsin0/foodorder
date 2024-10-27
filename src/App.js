@@ -1,9 +1,9 @@
 import { useState } from "react";
 import About from "./components/About";
 import Cart from "./components/Cart";
-import FoodCategory from "./components/FoodCategory";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
+import FoodCategories from "./components/FoodMenu";
 
 function App() {
   // const [cartItems, setCartItems] = useState([]);
@@ -23,7 +23,7 @@ function App() {
       <HeroSection />
       <About />
 
-      <FoodCategory />
+      <FoodCategories />
       {/* <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> */}
     </>
   );
