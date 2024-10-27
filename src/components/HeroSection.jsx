@@ -1,5 +1,5 @@
 import React from "react";
-import fooda from "../assets/hero.svg";
+import fooda from "../assets/hero-removebg.png";
 import { FaPlay } from "react-icons/fa6";
 const HeroSection = () => {
   return (
