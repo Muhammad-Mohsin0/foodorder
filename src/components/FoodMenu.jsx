@@ -6,22 +6,174 @@ import Burger from "../assets/burger.svg";
 import Pizza from "../assets/pizza.svg";
 import Wrap from "../assets/wraps.svg";
 import Desi from "../assets/Desi-karahi.svg";
+import IcedCold_Coffee from "../assets/IcedCold_Coffee.jpg";
+import FlatWhite_Coffee from "../assets/FlatWhite_Coffee.jpg";
+import Espresso_Coffee from "../assets/Espresso_Coffee.jpg";
+import Cappucino_Coffee from "../assets/Cappucino_Coffee.jpg";
+import FriedEgg_Burger from "../assets/FriedEgg_Burger.jpg";
+import Meat_Burger from "../assets/Meat_Burger.jpg";
+import GourmetCheese_Burger from "../assets/GourmetCheese_Burger.jpg";
+import Cheese_Burger from "../assets/Cheese_Burger.jpg";
 import Turkish_Pizza from "../assets/Turkish_Pizza.jpg";
+import Italian_Pizza from "../assets/Italian_Pizza.jpg";
+import Margarita_Pizza from "../assets/Margarita_Pizza.jpg";
+import Vegetarian_Pizza from "../assets/Vegetarian_Pizza.jpg";
+import Veg_Wraps from "../assets/Veg_Wraps.jpg";
+import Burrito_Wraps from "../assets/Burrito_Wraps.jpg";
+import Asian_Wraps from "../assets/Asian_Wraps.jpg";
+import Meat_wraps from "../assets/Meat_wraps.jpg";
 
 const Menu_Category = [
-  { id: 1, name: "Coffee", image: Coffee },
-  { id: 2, name: "Burger", image: Burger },
-  { id: 3, name: "Pizza", image: Pizza },
-  { id: 4, name: "Wraps", image: Wrap },
-  { id: 5, name: "Karahi", image: Desi },
+  {
+    id: 1,
+    name: "Coffee",
+    image: Coffee,
+  },
+  {
+    id: 2,
+    name: "Burger",
+    image: Burger,
+  },
+  {
+    id: 3,
+    name: "Pizza",
+    image: Pizza,
+  },
+  {
+    id: 4,
+    name: "Wrap",
+    image: Wrap,
+  },
+  {
+    id: 5,
+    name: "Karahi",
+    image: Desi,
+  },
 ];
+
 const Card_Category = [
-  { id: 1, name: "Turkish Pizza", price: "8.75", image: Turkish_Pizza },
-  { id: 2, name: "Burger", price: "5.50", image: Burger },
-  { id: 3, name: "Wraps", price: "6.25", image: Wrap },
-  { id: 4, name: "Coffee", price: "3.00", image: Coffee },
-  // { id: 5, name: "Karahi", price: "12.00", image: Desi },
+  {
+    id: 1,
+    category: "Coffee",
+    items: [
+      {
+        id: 101,
+        name: "Iced Cold Coffee",
+        price: "4.50",
+        image: IcedCold_Coffee,
+      },
+      {
+        id: 102,
+        name: "Flat White Coffee",
+        price: "5.00",
+        image: FlatWhite_Coffee,
+      },
+      {
+        id: 103,
+        name: "Espresso Coffee",
+        price: "3.75",
+        image: Espresso_Coffee,
+      },
+      {
+        id: 104,
+        name: "Cappuccino Coffee",
+        price: "4.25",
+        image: Cappucino_Coffee,
+      },
+    ],
+  },
+  {
+    id: 2,
+    category: "Burger",
+    items: [
+      {
+        id: 201,
+        name: "Fried Egg Burger",
+        price: "6.50",
+        image: FriedEgg_Burger,
+      },
+      {
+        id: 202,
+        name: "Meat Burger",
+        price: "7.00",
+        image: Meat_Burger,
+      },
+      {
+        id: 203,
+        name: "Gourmet Cheese Burger",
+        price: "8.50",
+        image: GourmetCheese_Burger,
+      },
+      {
+        id: 204,
+        name: "Cheese Burger",
+        price: "5.75",
+        image: Cheese_Burger,
+      },
+    ],
+  },
+  {
+    id: 3,
+    category: "Pizza",
+    items: [
+      {
+        id: 301,
+        name: "Turkish Pizza",
+        price: "9.00",
+        image: Turkish_Pizza,
+      },
+      {
+        id: 302,
+        name: "Italian Pizza",
+        price: "8.50",
+        image: Italian_Pizza,
+      },
+      {
+        id: 303,
+        name: "Margarita Pizza",
+        price: "7.50",
+        image: Margarita_Pizza,
+      },
+      {
+        id: 304,
+        name: "Vegetarian Pizza",
+        price: "8.25",
+        image: Vegetarian_Pizza,
+      },
+    ],
+  },
+  {
+    id: 4,
+    category: "Wraps",
+    items: [
+      {
+        id: 401,
+        name: "Veg Wraps",
+        price: "6.00",
+        image: Veg_Wraps,
+      },
+      {
+        id: 402,
+        name: "Burrito Wraps",
+        price: "7.00",
+        image: Burrito_Wraps,
+      },
+      {
+        id: 403,
+        name: "Asian Wraps",
+        price: "6.50",
+        image: Asian_Wraps,
+      },
+      {
+        id: 404,
+        name: "Meat Wraps",
+        price: "7.50",
+        image: Meat_wraps,
+      },
+    ],
+  },
 ];
+
 const FoodCategories = () => {
   return (
     <section id="categories" className="py-8 px-4 bg-gray-100 min-h-screen">
