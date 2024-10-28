@@ -4,6 +4,7 @@ import Cart from "./components/Cart";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import FoodCategories from "./components/FoodMenu";
+import SignUp from "./components/SignUp";
 
 function App() {
   // const [cartItems, setCartItems] = useState([]);
@@ -19,11 +20,12 @@ function App() {
   // };
   return (
     <>
-      <Navbar />
+      <SignUp />
+      {/* <Navbar />
       <HeroSection />
       <About />
 
-      <FoodCategories />
+      <FoodCategories /> */}
       {/* <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> */}
     </>
   );

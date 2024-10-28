@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
 import Coffee from "../assets/cup.svg";
@@ -144,7 +144,7 @@ const Card_Category = [
   },
   {
     id: 4,
-    category: "Wraps",
+    category: "Wrap",
     items: [
       {
         id: 401,
@@ -175,6 +175,12 @@ const Card_Category = [
 ];
 
 const FoodCategories = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const filteredItems = selectedCategory
+    ? Card_Category.find((cat) => cat.category === selectedCategory)?.items ||
+      []
+    : [];
   return (
     <section id="categories" className="py-8 px-4 bg-gray-100 min-h-screen">
       <h2 className="text-center text-3xl  font-overpass  font-bold mb-8 ">
@@ -184,7 +190,12 @@ const FoodCategories = () => {
         {Menu_Category.map((selectbutton) => (
           <button
             key={selectbutton.id}
-            className="hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 snap-center flex-shrink-0"
+            onClick={() => setSelectedCategory(selectbutton.name)}
+            className={`hover:text-orange-600 rounded-full px-4 py-2 snap-center flex-shrink-0 ${
+              selectedCategory === selectbutton.name
+                ? "bg-orange-600 text-white hover:text-white"
+                : ""
+            }`}
           >
             <img
               src={selectbutton.image}
@@ -196,39 +207,45 @@ const FoodCategories = () => {
         ))}
       </div>
 
-      <div className=" flex flex-wrap bg-yellow-200 justify-center p-8 gap-11 rounded-lg">
-        {Card_Category.map((category) => (
-          <div
-            key={category.id}
-            className="relative w-72 h-96 bg-white rounded-lg shadow-lg overflow-hidden"
-          >
-            <img
-              src={category.image}
-              alt={category.name}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-end  ">
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-white font-overpass mb-2 ">
-                  {category.name}
-                </h3>
-                <h4 className="text-lg font-semibold text-white font-overpass mb-2">
-                  <span className="text-center font-medium text-yellow-400 ">
-                    $
-                  </span>
-                  {category.price}
-                </h4>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-white font-overpass font-semibold"
-                >
-                  Order Now
-                  <IoIosArrowForward className="text-lg" />
-                </a>
+      <div className=" flex flex-wrap bg-orange-100 justify-center p-8 gap-11 rounded-lg">
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className="relative w-72 h-96 bg-white rounded-lg shadow-lg overflow-hidden"
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-end  ">
+                <div className="p-6">
+                  <h3 className="text-xl font-medium text-white font-overpass mb-2 ">
+                    {item.name}
+                  </h3>
+                  <h4 className="text-lg font-semibold text-white font-overpass mb-2">
+                    <span className="text-center font-medium text-yellow-400 ">
+                      $
+                    </span>
+                    {item.price}
+                  </h4>
+                  <a
+                    href="#"
+                    className="inline-flex items-center text-white font-overpass font-semibold"
+                  >
+                    Order Now
+                    <IoIosArrowForward className="text-lg" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="text-center text-gray-500 text-xl mt-8">
+            Select a category to view items.
+          </p>
+        )}
       </div>
     </section>
   );
