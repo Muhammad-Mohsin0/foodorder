@@ -14,12 +14,7 @@ const userSchema = yup
       .string()
       .trim()
       .email("Invalid Email")
-      .required("Email is required")
-      .test(
-        "is-sequenx-email",
-        "Email must be from the @sequenx.com ",
-        (value) => value && value.includes("@sequenx.com")
-      ),
+      .required("Email is required"),
     password: yup
       .string()
       .trim()
@@ -65,12 +60,14 @@ const SignUp = () => {
             }
           );
           console.log("Signup successful:", response.data);
+          alert("Signup successfully");
           action.resetForm();
         } catch (error) {
           console.error(
             "Signup failed:",
             error.response?.data || error.message
           );
+          alert("Signup Failed");
         }
       },
     });

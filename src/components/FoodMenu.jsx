@@ -80,6 +80,18 @@ const Card_Category = [
         price: "4.25",
         image: Cappucino_Coffee,
       },
+      {
+        id: 105,
+        name: "Cappuccino Coffee",
+        price: "4.25",
+        image: Cappucino_Coffee,
+      },
+      {
+        id: 106,
+        name: "Cappuccino Coffee",
+        price: "4.25",
+        image: Cappucino_Coffee,
+      },
     ],
   },
   {
@@ -106,6 +118,18 @@ const Card_Category = [
       },
       {
         id: 204,
+        name: "Cheese Burger",
+        price: "5.75",
+        image: Cheese_Burger,
+      },
+      {
+        id: 205,
+        name: "Cheese Burger",
+        price: "5.75",
+        image: Cheese_Burger,
+      },
+      {
+        id: 206,
         name: "Cheese Burger",
         price: "5.75",
         image: Cheese_Burger,
@@ -140,6 +164,18 @@ const Card_Category = [
         price: "8.25",
         image: Vegetarian_Pizza,
       },
+      {
+        id: 305,
+        name: "Vegetarian Pizza",
+        price: "8.25",
+        image: Vegetarian_Pizza,
+      },
+      {
+        id: 306,
+        name: "Vegetarian Pizza",
+        price: "8.25",
+        image: Vegetarian_Pizza,
+      },
     ],
   },
   {
@@ -166,6 +202,18 @@ const Card_Category = [
       },
       {
         id: 404,
+        name: "Meat Wraps",
+        price: "7.50",
+        image: Meat_wraps,
+      },
+      {
+        id: 405,
+        name: "Meat Wraps",
+        price: "7.50",
+        image: Meat_wraps,
+      },
+      {
+        id: 406,
         name: "Meat Wraps",
         price: "7.50",
         image: Meat_wraps,

@@ -2,21 +2,18 @@ import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import { useNavigate, NavLink } from "react-router-dom";
 import * as yup from "yup";
+import axios from "axios";
 
 const userSignInSchema = yup
   .object({
-    mail: yup
-      .string()
-      .trim()
-      .email("Invalid Email")
-      .required("Email is required"),
-    pass: yup.string().required("Password is required"),
+    username: yup.string().trim().required("Username is required"),
+    password: yup.string().required("Password is required"),
   })
   .required();
 
 const initialValues = {
-  mail: "",
-  pass: "",
+  username: "",
+  password: "",
 };
 
 const SignIn = () => {
@@ -29,10 +26,32 @@ const SignIn = () => {
     }
   }, [navigate]);
 
-  const onSubmit = (values, action) => {
+  const onSubmit = async (values, action) => {
     console.log("values", values);
-    localStorage.setItem("signin", true);
-    navigate("/");
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api/signin/", {
+        username: values.username,
+        password: values.password,
+      });
+      console.log("Response Data :", response.data);
+
+      const { token } = response.data;
+      if (token) {
+        localStorage.setItem("signin", true);
+        localStorage.setItem("authToken", token);
+        navigate("/");
+      } else {
+        console.log("Token not received");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      if (axios.isAxiosError(error) && error.response) {
+        alert("Invalid username or password");
+      } else {
+        alert("An error occurred. Please try again.");
+      }
+    }
+
     action.resetForm();
   };
 
@@ -53,19 +72,19 @@ const SignIn = () => {
           <div className="text-4xl font-bold text-primary">Majeka Point</div>{" "}
           <br />
           <div className=" w-[80%] flex flex-col flex-start">
-            <div className="">Email</div>
+            <div className="">User Name</div>
             <input
               className="border-2 rounded-lg px-2 py-2"
               type="text"
-              name="mail"
-              id="mail"
-              placeholder="Enter your email"
-              value={values.mail}
+              name="username"
+              id="username"
+              placeholder="Enter your username"
+              value={values.username}
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.mail && touched.mail ? (
-              <div className="text-red-500">{errors.mail}</div>
+            {errors.username && touched.username ? (
+              <div className="text-red-500">{errors.username}</div>
             ) : null}
           </div>
           <div className=" w-[80%] flex flex-col flex-start">
@@ -79,15 +98,15 @@ const SignIn = () => {
             <input
               className="  border-2 rounded-lg px-2 py-2"
               type="password"
-              name="pass"
-              id="pass"
+              name="password"
+              id="password"
               placeholder="Enter you password"
-              value={values.pass}
+              value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.pass && touched.pass && (
-              <div className="text-red-500">{errors.pass}</div>
+            {errors.password && touched.password && (
+              <div className="text-red-500">{errors.password}</div>
             )}
           </div>
           <button
