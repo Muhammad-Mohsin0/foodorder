@@ -1,10 +1,11 @@
 import { useState } from "react";
-import About from "./components/About";
 import Cart from "./components/Cart";
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import FoodCategories from "./components/FoodMenu";
-import SignUp from "./components/SignUp";
+
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
+import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   // const [cartItems, setCartItems] = useState([]);
@@ -20,12 +21,14 @@ function App() {
   // };
   return (
     <>
-      <SignUp />
-      {/* <Navbar />
-      <HeroSection />
-      <About />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ProtectedRoute Component={Home} />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
 
-      <FoodCategories /> */}
       {/* <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> */}
     </>
   );

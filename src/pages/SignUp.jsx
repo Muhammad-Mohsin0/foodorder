@@ -1,5 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
+import { NavLink } from "react-router-dom";
+
 import axios from "axios";
 import * as yup from "yup";
 
@@ -185,9 +187,12 @@ const SignUp = () => {
           </button>
           <div className=" flex pt-6 md:pt-10">
             Already have an account?
-            <div className="text-sky-500 ml-1 cursor-pointer" to={"/signin"}>
+            <NavLink
+              className="text-sky-500 ml-1 cursor-pointer"
+              to={"/signin"}
+            >
               Login now
-            </div>
+            </NavLink>
           </div>
         </form>
       </div>
