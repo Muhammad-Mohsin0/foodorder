@@ -63,8 +63,8 @@ const SignIn = () => {
     });
 
   return (
-    <div className="flex justify-center">
-      <div className=" relative md:bg-white bg-primary md:w-[50%] w-[100%] h-screen flex justify-center ">
+    <div className="flex justify-center bg-gradient-to-r from-orange-300 from-10% via-sky-100 via-30% to-yellow-200 to-90%">
+      <div className=" relative md:bg-white bg-orange-400 md:w-[50%] w-[100%] h-screen flex justify-center ">
         <form
           className="w-[100%] flex flex-col justify-center bg-white space-y-4 rounded-lg m-10 items-center"
           onSubmit={handleSubmit}
@@ -115,7 +115,7 @@ const SignIn = () => {
           >
             Sign in
           </button>
-          <div>
+          <div className="flex flex-col lg:flex-row">
             Don't have an account?
             <NavLink
               className="text-sky-500 ml-1 cursor-pointer"

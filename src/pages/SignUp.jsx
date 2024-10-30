@@ -73,8 +73,8 @@ const SignUp = () => {
     });
 
   return (
-    <div className="flex justify-center">
-      <div className=" relative md:bg-white bg-primary md:w-[50%] w-[100%] h-screen flex justify-center">
+    <div className="flex justify-center bg-gradient-to-r from-orange-300 from-10% via-sky-100 via-30% to-yellow-200 to-90%">
+      <div className=" relative md:bg-white bg-orange-600 md:w-[50%] w-[100%] h-screen flex justify-center">
         <form
           className="w-[100%] flex flex-col bg-white m-10 rounded-lg justify-center items-center"
           onSubmit={handleSubmit}

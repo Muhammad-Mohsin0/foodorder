@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { IoIosArrowForward } from "react-icons/io";
+import React, { useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import Coffee from "../assets/cup.svg";
 import Burger from "../assets/burger.svg";
@@ -224,11 +225,21 @@ const Card_Category = [
 
 const FoodCategories = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const filteredItems = selectedCategory
     ? Card_Category.find((cat) => cat.category === selectedCategory)?.items ||
       []
     : [];
+
+  const scrollPrev = useCallback(
+    () => emblaApi && emblaApi.scrollPrev(),
+    [emblaApi]
+  );
+  const scrollNext = useCallback(
+    () => emblaApi && emblaApi.scrollNext(),
+    [emblaApi]
+  );
   return (
     <section id="categories" className="py-8 px-4 bg-gray-100 min-h-screen">
       <h2 className="text-center text-3xl  font-overpass  font-bold mb-8 ">
@@ -255,40 +266,57 @@ const FoodCategories = () => {
         ))}
       </div>
 
-      <div className=" flex flex-wrap bg-orange-100 justify-center p-8 gap-11 rounded-lg">
+      <div className="flex  bg-orange-100 justify-center p-8 gap-11 rounded-lg">
         {filteredItems.length > 0 ? (
-          filteredItems.map((item) => (
-            <div
-              key={item.id}
-              className="relative w-72 h-96 bg-white rounded-lg shadow-lg overflow-hidden"
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 flex items-end  ">
-                <div className="p-6">
-                  <h3 className="text-xl font-medium text-white font-overpass mb-2 ">
-                    {item.name}
-                  </h3>
-                  <h4 className="text-lg font-semibold text-white font-overpass mb-2">
-                    <span className="text-center font-medium text-yellow-400 ">
-                      $
-                    </span>
-                    {item.price}
-                  </h4>
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-white font-overpass font-semibold"
+          <div className="relative w-full max-w-screen mx-auto">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {filteredItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="embla__slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 xl:w-1/4  p-4"
                   >
-                    Order Now
-                    <IoIosArrowForward className="text-lg" />
-                  </a>
-                </div>
+                    <div className="relative w-full h-96 bg-white rounded-lg shadow-lg overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-end">
+                        <div className="p-6">
+                          <h3 className="text-xl font-medium text-white mb-2">
+                            {item.name}
+                          </h3>
+                          <h4 className="text-lg font-semibold text-white mb-2">
+                            <span className="text-yellow-400">$</span>{" "}
+                            {item.price}
+                          </h4>
+                          <a
+                            href="#.2"
+                            className="inline-flex items-center text-white"
+                          >
+                            Order Now <IoIosArrowForward className="text-lg" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))
+            <button
+              onClick={scrollPrev}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-orange-400 hover:opacity-60 p-4 rounded-full  text-white hover:text-white"
+            >
+              <IoIosArrowBack size={22} />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2  bg-orange-400 hover:opacity-60 p-4 rounded-full  text-white hover:text-white"
+            >
+              <IoIosArrowForward size={22} />
+            </button>
+          </div>
         ) : (
           <p className="text-center text-gray-500 text-xl mt-8">
             Select a category to view items.
