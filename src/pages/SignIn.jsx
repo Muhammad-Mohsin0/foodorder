@@ -115,7 +115,7 @@ const SignIn = () => {
           >
             Sign in
           </button>
-          <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col x:flex-row xlg:flex-row">
             Don't have an account?
             <NavLink
               className="text-sky-500 ml-1 cursor-pointer"

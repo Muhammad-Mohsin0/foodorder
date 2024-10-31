@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cart from "./components/Cart";
 
 import SignUp from "./pages/SignUp";
@@ -6,31 +6,45 @@ import SignIn from "./pages/SignIn";
 import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import LoginForm from "./components/FormLogin";
+import ManualOrderForm from "./components/FormApi";
 
 function App() {
-  // const [cartItems, setCartItems] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setIsAuthenticated(!!token); // Sets true if token exists
+  }, []);
 
-  // // Add item to cart
-  // const addToCart = (item) => {
-  //   setCartItems((prev) => [...prev, item]);
-  // };
+  const handleLoginSuccess = () => {
+    setIsAuthenticated(true); // Update authentication state after login
+  };
 
-  // // Remove item from cart
-  // const removeFromCart = (itemId) => {
-  //   setCartItems((prev) => prev.filter((item) => item.id !== itemId));
-  // };
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    setIsAuthenticated(false);
+  };
+
   return (
-    <>
-      <BrowserRouter>
+    <div>
+      {isAuthenticated ? (
+        <div>
+          <button onClick={handleLogout}>Logout</button>
+          <ManualOrderForm />
+        </div>
+      ) : (
+        <LoginForm onLoginSuccess={handleLoginSuccess} />
+      )}
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProtectedRoute Component={Home} />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
       {/* <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> */}
-    </>
+    </div>
   );
 }
 
