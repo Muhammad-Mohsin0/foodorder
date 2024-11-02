@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { HiMiniShoppingBag } from "react-icons/hi2";
+
 import { FaUser } from "react-icons/fa6";
 import { AiOutlineLogout } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -43,7 +44,7 @@ const Navbar = () => {
               href="#cart"
               className="text-white hover:text-gray-300 flex items-center"
             >
-              <FaShoppingCart className="mt-1 text-2xl" />
+              <HiMiniShoppingBag className="mt-1 text-2xl" />
             </a>
           </li>
           <li>
