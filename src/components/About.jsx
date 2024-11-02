@@ -4,7 +4,6 @@ import Aboutimg from "../assets/About3.jpg";
 const About = () => {
   return (
     <div id="about" className="min-h-full ">
-      {/* Image Div with Fixed Width */}
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-evenly">
         <div className=" mt-8 px-4 md:px-6 xl:px-0 xlg:mb-8 sm:max-w-xl md:max-w-md  ">
           <img
@@ -14,7 +13,6 @@ const About = () => {
           />
         </div>
 
-        {/* Text Div with Expanding Width and Left Space for Large Screens */}
         <div className="  mt-8 px-4 md:px-6 xl:px-0 mb-4 sm:max-w-xl ">
           <h1 className="text-3xl font-bold text-orange-600 font-overpass mb-6 md:mb-4 ">
             About us ~

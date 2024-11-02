@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSection";
 import About from "../components/About";
 import FoodCategories from "../components/FoodMenu";
 import Footer from "../components/Footer";
+import OrderNow from "../components/OrderNow";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <HeroSection />
       <About />
       <FoodCategories />
+      {/* <OrderNow /> */}
       <Footer />
     </div>
   );

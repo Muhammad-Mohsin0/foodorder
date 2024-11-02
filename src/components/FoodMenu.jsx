@@ -1,4 +1,6 @@
 import React, { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+
 import useEmblaCarousel from "embla-carousel-react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -224,6 +226,7 @@ const Card_Category = [
 ];
 
 const FoodCategories = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
@@ -240,8 +243,12 @@ const FoodCategories = () => {
     () => emblaApi && emblaApi.scrollNext(),
     [emblaApi]
   );
+
+  const handleOrder = () => {
+    navigate("/ordering");
+  };
   return (
-    <section id="categories" className="py-8 px-4 bg-gray-100 min-h-screen">
+    <section id="categories" className="py-8 px-4 min-h-screen">
       <h2 className="text-center text-3xl  font-overpass  font-bold mb-8 ">
         Special Menu For You
       </h2>
@@ -288,14 +295,14 @@ const FoodCategories = () => {
                             {item.name}
                           </h3>
                           <h4 className="text-lg font-semibold text-white mb-2">
-                            <span className="text-yellow-400">$</span>{" "}
+                            <span className="text-yellow-400">$</span>
                             {item.price}
                           </h4>
                           <a
-                            href="#.2"
-                            className="inline-flex items-center text-white"
+                            className="inline-flex items-center font-overpass text-white cursor-pointer hover:bg-yellow-500 rounded-3xl px-4 py-2"
+                            onClick={handleOrder}
                           >
-                            Order Now <IoIosArrowForward className="text-lg" />
+                            Order Now
                           </a>
                         </div>
                       </div>
