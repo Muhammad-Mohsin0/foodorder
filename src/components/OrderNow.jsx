@@ -12,7 +12,7 @@ const OrderNow = () => {
           <img
             src={Aboutimg}
             alt="About Us"
-            className="w-full  rounded-t-xl xlg:rounded-l-xl xlg:mt-2 p-2"
+            className="w-full rounded-t-xl xlg:rounded-l-xl xlg:mt-2 p-2"
           />
         </div>
 
@@ -40,13 +40,13 @@ const OrderNow = () => {
             <HiMiniStar />
             <h3 className="text-black ml-2">(reviews)</h3>
           </div>
-          <div className=" flex items-center  ">
-            <div className="w-[13rem] text-xl flex items-center justify-between border border-1 px-4 py-2 rounded-full ">
-              <RiArrowLeftSLine className="text-4xl border border-1 rounded-full p-1 cursor-pointer" />{" "}
+          <div className=" flex flex-col md:flex-row items-center justify-start md:justify-between   ">
+            <div className="w-[10rem] md:w-[13rem] text-xl flex items-center  justify-around border border-1 px-1  md:px-4 py-2 rounded-full ">
+              <RiArrowLeftSLine className="text-3xl md:text-4xl border border-1 rounded-full p-1 cursor-pointer" />{" "}
               1
-              <RiArrowRightSLine className="text-4xl border border-1 rounded-full p-1 cursor-pointer" />
+              <RiArrowRightSLine className="text-3xl md:text-4xl border border-1 rounded-full p-1 cursor-pointer" />
             </div>
-            <button className="font-overpass text-xl font-medium bg-orange-600 text-white px-6 py-4  rounded-full ml-12 hover:bg-orange-500">
+            <button className="font-overpass text-xl font-medium bg-orange-600 text-white px-4 py-2 md:px-6 md:py-4  rounded-full mt-4 md:mt-0 md:ml-12 hover:bg-orange-500">
               Add to cart
             </button>
           </div>
