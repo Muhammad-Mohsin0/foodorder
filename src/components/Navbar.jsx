@@ -14,7 +14,7 @@ const Navbar = () => {
   };
   return (
     <div className=" relative z-50">
-      <nav className="bg-orange-800 p-4 flex justify-between px-12 fixed top-0 left-0 right-0 items-center shadow-xl ">
+      <nav className="bg-orange-800 p-4 flex justify-between px-12 fixed top-0 left-0 right-0 items-center shadow-xl  w-[90%] mx-auto rounded-xl mt-4 ">
         <h1 className="text-white text-2xl font-bold font-overpass ">Majeka</h1>
 
         <div className="md:hidden flex ">
