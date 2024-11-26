@@ -1,9 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-
 import useEmblaCarousel from "embla-carousel-react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
 import Coffee from "../assets/cup.svg";
 import Burger from "../assets/burger.svg";
 import Pizza from "../assets/pizza.svg";
@@ -226,7 +224,7 @@ const Card_Category = [
 ];
 
 const FoodCategories = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
@@ -244,9 +242,9 @@ const FoodCategories = () => {
     [emblaApi]
   );
 
-  const handleOrder = () => {
-    navigate("/ordering");
-  };
+  // const handleOrder = () => {
+  //   navigate("/ordering");
+  // };
   return (
     <section id="categories" className="py-8 px-4 min-h-screen">
       <h2 className="text-center text-3xl  font-overpass  font-bold mb-8 ">
@@ -300,7 +298,7 @@ const FoodCategories = () => {
                           </h4>
                           <a
                             className="inline-flex items-center font-overpass text-white cursor-pointer hover:bg-yellow-500 rounded-3xl px-4 py-2"
-                            onClick={handleOrder}
+                            // onClick={handleOrder}
                           >
                             Order Now
                           </a>

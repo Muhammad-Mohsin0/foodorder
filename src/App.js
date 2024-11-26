@@ -34,15 +34,15 @@ function App() {
       ) : (
         <LoginForm onLoginSuccess={handleLoginSuccess} />
       )} */}
-
-      <BrowserRouter>
+      <Home />
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProtectedRoute Component={Home} />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/ordering" element={<OrderNow />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

@@ -19,12 +19,12 @@ const HeroSection = () => {
               Order your favorite meals from the comfort of your home.
             </p>
             <div className="flex items-center justify-center xl:justify-start  space-x-4">
-              <button className="font-overpass text-xl font-medium bg-orange-600 text-white px-2 py-3 sm:px-4 rounded-lg hover:bg-orange-500">
+              <button className="font-overpass text-lg font-medium bg-orange-600 text-white px-2 py-2 sm:px-4 rounded-lg hover:bg-orange-500">
                 Order Now
               </button>
 
-              <button className="font-overpass text-xl font-medium bg-white text-black px-2 py-3 sm:px-2 rounded-lg hover:bg-orange-500 hover:text-white flex items-center">
-                <FaPlay className="text-2xl  mr-2 mb-1" />
+              <button className="font-overpass text-lg font-medium bg-white text-black px-2 py-2 sm:px-2 rounded-lg hover:bg-orange-500 hover:text-white flex items-center">
+                <FaPlay className="text-xl  mr-2 mb-1" />
                 How to Order
               </button>
             </div>
