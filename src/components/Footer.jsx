@@ -10,7 +10,7 @@ import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-white">
+    <footer id="contact" className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Logo and Description */}

@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div id="about" className="min-h-full ">
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-evenly">
-        <div className=" mt-8 px-4 md:px-6 xl:px-0 xlg:mb-8 sm:max-w-xl md:max-w-md  ">
+        <div className=" mt-20 px-4 md:px-6 xl:px-0 xlg:mb-8 sm:max-w-xl md:max-w-md ">
           <img
             src={Aboutimg}
             alt="About Us"
