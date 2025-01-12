@@ -43,22 +43,22 @@
   @keyframes fadeBackground {
     0%,
     20% {
-      background-image: url("/src/assets/background1.jpg");
+      background-image: url("/src/assets/background1.png");
     }
     25%,
     45% {
-      background-image: url("/src/assets/background2.jpg");
+      background-image: url("/src/assets/background2.png");
     }
     50%,
     70% {
-      background-image: url("/src/assets/background3.jpg");
+      background-image: url("/src/assets/background3.png");
     }
     75%,
     95% {
-      background-image: url("/src/assets/background4.jpg");
+      background-image: url("/src/assets/background4.png");
     }
     100% {
-      background-image: url("/src/assets/background1.jpg");
+      background-image: url("/src/assets/background1.png");
     }
   }
 
