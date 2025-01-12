@@ -17,7 +17,7 @@ module.exports = {
         pacifico: ["Pacifico", " cursive"],
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/background1.jpg')",
+        "hero-pattern": "url('/src/assets/background1.png')",
       },
     },
   },
